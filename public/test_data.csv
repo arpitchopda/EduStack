@@ -1,0 +1,10 @@
+Student ID,Student Name,Batch,Department,Semester,Email,Contact,Total Credits,CGPA,Mathematics,Physics,Computer Science,Chemistry
+S001,Alice Johnson,2020-21,Computer Science,Fall 2023,alice@example.com,1234567890,15,9.4,A,A,A,A-
+S001,Alice Johnson,2020-21,Computer Science,Spring 2024,alice@example.com,1234567890,16,9.6,A+,A,A+,A
+S002,Bob Smith,2020-21,Electrical Engineering,Fall 2023,bob@example.com,0987654321,12,7.2,B,B,C,B+
+S002,Bob Smith,2020-21,Electrical Engineering,Spring 2024,bob@example.com,0987654321,14,7.8,B+,B,B-,A
+S003,Charlie Davis,2021-22,Computer Science,Fall 2023,charlie@example.com,1112223333,15,8.5,A-,B+,A-,B
+S004,Diana Prince,2021-22,Mechanical Engineering,Fall 2023,diana@example.com,4445556666,18,9.8,A+,A+,A+,A
+S004,Diana Prince,2021-22,Mechanical Engineering,Spring 2024,diana@example.com,4445556666,18,9.9,A+,A+,A+,A+
+S005,Edward Elric,2020-21,Computer Science,Fall 2023,edward@example.com,5556667777,16,8.9,A,B+,A,A
+S006,Fiona Gallagher,2022-23,Civil Engineering,Fall 2023,fiona@example.com,8889990000,15,6.5,C+,B,C,B

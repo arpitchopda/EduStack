@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-storm-50: #f4f7f7;
+  --color-storm-100: #e3ebec;
+  --color-storm-200: #ced3d3; /* image color 1 */
+  --color-storm-300: #a2b7b5;
+  --color-storm-400: #7ba8a4; /* image color 2 */
+  --color-storm-500: #578589;
+  --color-storm-600: #4a6d74; /* image color 3 */
+  --color-storm-700: #334d52;
+  --color-storm-800: #0d2a32; /* image color 4 */
+  --color-storm-900: #0a1f26;
+  --color-storm-950: #061217; /* image color 5 */
+
+  --color-sand-50: #ffedd8;
+  --color-sand-100: #f3d5b5;
+  --color-sand-200: #e7bc91;
+  --color-sand-300: #d4a276;
+  --color-sand-400: #bc8a5f;
+  --color-sand-500: #a47148;
+  --color-sand-600: #8b5e34;
+  --color-sand-700: #6f4518;
+  --color-sand-800: #603808;
+  --color-sand-900: #583101;
+  --color-sand-950: #3f2100;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #061217;
+    --foreground: #e3ebec;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Premium Mesh Gradient Background Effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(280, 80%, 90%, 1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(240, 80%, 90%, 1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(320, 80%, 90%, 1) 0, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(260, 60%, 20%, 0.8) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(220, 70%, 25%, 0.7) 0, transparent 50%),
+      radial-gradient(at 50% 100%, hsla(300, 60%, 15%, 0.8) 0, transparent 50%);
+  }
+}

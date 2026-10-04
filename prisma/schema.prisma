@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id         String     @id
+  name       String
+  email      String?
+  contact    String?
+  batch      String?
+  department String?
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  
+  semesters  Semester[]
+}
+
+model Semester {
+  id          String   @id @default(cuid())
+  studentId   String
+  semester    String
+  totalCredits Float?
+  cgpa        Float?
+  
+  // Stored as stringified JSON in SQLite
+  academicData String  
+  
+  student     Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, semester])
+}
+
+model UploadHistory {
+  id           String   @id @default(cuid())
+  filename     String
+  uploadDate   DateTime @default(now())
+  status       String
+  recordsAdded Int
+  // Stored as stringified JSON
+  errors       String?
+  // Stored as stringified JSON array of student IDs
+  studentIds   String?
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  userId      String?
+  action      String
+  description String
+  createdAt   DateTime @default(now())
+}
