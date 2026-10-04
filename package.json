@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push && node seed_admin.js && next build",
+    "build": "npx prisma generate && npx prisma db push --accept-data-loss && node seed_admin.js && next build",
     "start": "next start",
     "postinstall": "prisma generate",
     "lint": "eslint"
@@ -12,6 +12,7 @@
   "dependencies": {
     "@prisma/client": "^5.22.0",
     "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
     "cmdk": "^1.1.1",
     "form-data": "^4.0.6",
     "framer-motion": "^12.43.0",
